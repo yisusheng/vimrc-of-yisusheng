@@ -46,3 +46,5 @@ set autoindent
 syntax on
 set ruler
 set showmode
+set encoding=utf-8
+set cursorline
