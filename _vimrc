@@ -39,3 +39,10 @@ function MyDiff()
   endif
 endfunction
 
+
+" settings
+set nu
+set autoindent
+syntax on
+set ruler
+set showmode
