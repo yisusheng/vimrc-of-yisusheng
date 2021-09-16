@@ -42,6 +42,7 @@ endfunction
 
 " settings
 set nu
+set relativenumber
 set autoindent
 syntax on
 set ruler
@@ -68,3 +69,29 @@ source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 "解决consle输出乱码
 language messages zh_CN.utf-8
+
+
+" vim-plug
+call plug#begin('~/vimfiles/MyPlugin')
+
+Plug 'lervag/vimtex'
+Plug 'SirVer/ultisnips'
+
+call plug#end()
+
+
+
+" vimtex
+let g:tex_flavor='latex'
+let g:vimtex_textcount_custom_arg=' -ch -total'
+" 统计中英文字符个数
+let g:tex_ViewRule_pdf='D:\ProgramFiles\SumatraPDF\SumatraPDF.exe -reuse-instance -inver'
+
+" vimtex编译引擎配置，默认-pdf
+let g:vimtex_compiler_latexmk_engines = {
+			\ '_'		: '-pdf',
+			\ 'pdflatex'	: '-pdf',
+			\ 'dvipdfefx'	: '-pdfdvi',
+			\ 'lualatex'	: '-lualatex',
+			\ 'xelatex'	: '-xelatex',
+			\}
