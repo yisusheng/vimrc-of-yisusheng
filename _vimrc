@@ -39,6 +39,9 @@ function MyDiff()
   endif
 endfunction
 
+" 修改启动目录
+cd E:\Users\WXY\MyWorkplace
+
 
 " settings
 set nu
@@ -51,7 +54,7 @@ set showmode
 set cursorline
 set wildmenu
 set visualbell
-set lines=40
+set lines=30
 set columns=118
 set guifont=HACK:h10
 
@@ -76,26 +79,14 @@ call plug#begin('~/vimfiles/MyPlugin')
 
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
+Plug 'preservim/nerdtree'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
-
-
-" vimtex
-let g:tex_flavor='latex'
-let g:vimtex_textcount_custom_arg=' -ch -total'
-" 统计中英文字符个数
-let g:tex_ViewRule_pdf='D:\ProgramFiles\SumatraPDF\SumatraPDF.exe -reuse-instance -inver'
-
-" vimtex编译引擎配置，默认-pdf
-let g:vimtex_compiler_latexmk_engines = {
-			\ '_'		: '-pdf',
-			\ 'pdflatex'	: '-pdf',
-			\ 'dvipdfefx'	: '-pdfdvi',
-			\ 'lualatex'	: '-lualatex',
-			\ 'xelatex'	: '-xelatex',
-			\}
-
-
-
+set laststatus=2  "永远显示状态栏
+let g:airline_powerline_fonts = 1  " 支持 powerline 字体
+let g:airline#extensions#tabline#enabled = 1 " 显示窗口tab和buffer
 
